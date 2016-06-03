@@ -7,7 +7,8 @@
   "scripts": {
     "test": "mocha",
     "patch": "npm version patch && git push --follow-tags && npm publish",
-    "minor": "npm version minor && git push --follow-tags && npm publish"
+    "minor": "npm version minor && git push --follow-tags && npm publish",
+    "build": "browserify ./lib/index.js -o ./dist/ramda-utils.js -t [ babelify --presets [ es2015 ] ]"
   },
   "author": "Charles Scalfani",
   "license": "MIT",
@@ -16,6 +17,9 @@
     "ramda": "^0.18.0"
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
     "chai": "^3.2.0",
     "mocha": "^2.3.2",
     "sinon": "^1.16.1",
